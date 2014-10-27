@@ -9,3 +9,5 @@ require_relative 'downloads'
 
 require_relative 'trackers'
 
+require_relative 'uploads'
+

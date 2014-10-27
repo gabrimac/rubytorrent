@@ -1,9 +1,10 @@
 // Declare app level module which depends on filters, and services
-angular.module('rubytorrent', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.date', 'truncate'])
+angular.module('rubytorrent',
+ ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.date', 'truncate', 'angularFileUpload'])
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/home/home.html', 
+        templateUrl: 'views/home/home.html',
         controller: 'HomeController',
         resolve:{
           resolvedTracker: ['Tracker', function (Tracker) {

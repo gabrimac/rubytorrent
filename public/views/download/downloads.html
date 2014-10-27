@@ -28,6 +28,17 @@
   <div class="col-md-10" >
     <div>
       <script type = "text/ng-template" id="download-save.html">
+        <div ng-controller="FileUploadController">
+          <input type="text" ng-model="myModelObj">
+          <input type="file" ng-file-select="onFileSelect($files)">
+          <input type="file" ng-file-select="onFileSelect($files)" multiple accept="image/*">
+          <div class="button" ng-file-select="onFileSelect($files)" data-multiple="true"></div>
+          <div ng-file-drop="onFileSelect($files)" ng-file-drag-over-class="optional-css-class-name-or-function"
+                ng-show="dropSupported">drop files here</div>
+          <div ng-file-drop-available="dropSupported=true"
+                ng-show="!dropSupported">HTML5 Drop File is not supported!</div>
+          <button ng-click="upload.abort()">Cancel Upload</button>
+        </div>
         <form name="form" role="form" novalidate
           class="ng-scope ng-invalid ng-invalid-required ng-dirty"
           ng-submit="ok()">
