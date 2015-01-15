@@ -1,9 +1,10 @@
 'use strict';
 
 angular.module('rubytorrent')
-  .factory('Download', ['$resource', function ($resource) {
+  .factory('Download', ['$resource', '$interval', function ($resource, $interval) {
     var download = $resource('rubytorrent/downloads/:id', {}, {
       'query': { method: 'GET', isArray: true},
+      'actives': { method: 'GET', params: {"active": "true"}, isArray: true},
       'get': { method: 'GET'},
       'update': { method: 'PUT'}
     });
@@ -43,7 +44,7 @@ angular.module('rubytorrent')
         return "";
       } else {
         return (this.down_rate / 1024).toFixed(2).toString() + " KB";
-      }  
+      }
     };
 
     download.prototype.getUpRate = function() {
@@ -51,7 +52,7 @@ angular.module('rubytorrent')
         return "";
       } else {
         return (this.up_rate / 1024).toFixed(2).toString() + " KB";
-      }  
+      }
     };
 
     function calculateSize(value) {

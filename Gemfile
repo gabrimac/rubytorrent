@@ -8,6 +8,8 @@ gem 'thin', platform: :mri_19
 gem 'oj', platform: :mri_19
 gem 'pry-byebug'
 gem 'multi_json'
+gem 'rerun'
+gem 'resque'
 gem 'retort', github: 'gabrimac/retort'
 gem 'activerecord', '4.0.2'
 gem 'activerecord-jdbcsqlite3-adapter', platform: :jruby, group: :development

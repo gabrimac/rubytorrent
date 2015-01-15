@@ -8,9 +8,14 @@ class Torrent
 
   def load
     base64_content = XMLRPC::Base64.new(@content, state = :dec)
-    if connection.server.call 'load_raw_start', base64_content == 1
-      true
-    else
+    begin
+      if connection.server.call('load_raw_start', base64_content) == 1
+        true
+      else
+        false
+      end
+    rescue XMLRPC::FaultException => string
+      print string
       false
     end
   end
