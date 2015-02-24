@@ -5,11 +5,6 @@ angular.module('rubytorrent')
     $routeProvider
       .when('/downloads', {
         templateUrl: 'views/download/downloads.html',
-        controller: 'DownloadController',
-        resolve:{
-          resolvedDownload: ['Download', function (Download) {
-            return Download.query();
-          }]
-        }
+        controller: 'DownloadController'
       })
     }]);

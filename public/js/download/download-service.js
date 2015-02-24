@@ -24,7 +24,7 @@ angular.module('rubytorrent')
     };
 
     download.prototype.getPercentage = function() {
-      return ((this.completed_bytes / this.size_bytes) * 100).toFixed() + " %";
+      return ((this.completed_bytes / this.size_bytes) * 100).toFixed();
     };
 
     download.prototype.getDown = function() {

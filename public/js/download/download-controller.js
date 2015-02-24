@@ -1,11 +1,14 @@
 'use strict';
 
 angular.module('rubytorrent')
-  .controller('DownloadController', ['$scope', '$modal', '$upload', '$interval', 'resolvedDownload', 'Download',
-    function ($scope, $modal,  $upload, $interval,resolvedDownload, Download) {
+  .controller('DownloadController', ['$scope', '$modal', '$upload', '$interval', 'Download',
+    function ($scope, $modal,  $upload, $interval, Download) {
 
-      $scope.downloads = resolvedDownload;
-      $interval(get_actives(), 10000);
+      getDownloads();
+      $interval(function() {
+        getDownloads();
+      }, 30000);
+      //$interval(get_actives(), 10000);
       $scope.selectedCompletes = [0, 1];
       $scope.selectedActives = [0, 1];
       $scope.filterAll = "active";
@@ -148,14 +151,24 @@ angular.module('rubytorrent')
         });
       };
 
-      function get_actives() {
-        angular.forEach($scope.downloads, function(download){
-          if (download.down_total > 0 || download.up_total > 0) {
-            var id = "";
-            download = Download.get(id = download.local_id);
+      function getDownloads() {
+        Download.query().$promise.then(function(downloads) {
+          if ($scope.downloads === undefined) {
+            $scope.downloads = downloads;
+          } else {
+            downloads.forEach
           }
         });
-      };
+      }
+
+      // function get_actives() {
+      //   angular.forEach($scope.downloads, function(download){
+      //     if (download.down_total > 0 || download.up_total > 0) {
+      //       var id = "";
+      //       download = Download.get(id = download.local_id);
+      //     }
+      //   });
+      // };
 
     }]);
 

@@ -3,6 +3,7 @@ require 'multi_json'
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'pry-byebug'
+require 'redis'
 
 class Rubytorrent < Sinatra::Application
   enable :sessions

@@ -40,7 +40,6 @@ class Download
     end
 
     def search(query)
-      debugger
       connector = connection
       args = DOWNLOAD_DATA.map { |elem| "d.get_#{elem}=" }
       torrents = connector.server.call 'd.multicall', "#{query}", *args
