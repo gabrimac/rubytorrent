@@ -72,6 +72,27 @@
 					"required": true
 				}
 			]
+		},
+		{
+			"name": "Folder",
+			"attrs": [
+				{
+					"attrName": "path",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "user_id",
+					"attrType": "Integer",
+					"min": "",
+					"max": "",
+					"enumValues": [],
+					"required": false
+				}
+			]
 		}
 	],
 	"resources": []

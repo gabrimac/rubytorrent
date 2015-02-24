@@ -7,12 +7,12 @@
   <title>Rubytorrent</title>
   <link href="lib/bootstrap-css/css/bootstrap.css" rel="stylesheet">
   <link href="lib/jquery-ui/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="lib/angular-snap/angular-snap.min.css">
+  <link rel="stylesheet" type="text/css" href="lib/angular-snap/angular-snap.min.css">
   <link href="css/app.css" rel="stylesheet">
 </head>
 <body>
  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-   <div class="">
+   <div class="container">
      <div class="navbar-header">
        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
          <span class="sr-only">Toggle navigation</span>
@@ -26,23 +26,30 @@
      <!-- Collect the nav links, forms, and other content for toggling -->
      <div class="collapse navbar-collapse navbar-ex1-collapse">
        <ul class="nav navbar-nav">
-        <li>
-          <a href="/#/torrents">Torrents</a>
-        </li>
-        <li>
-          <a href="/#/files">Files</a>
-        </li>
-        <li>
-          <a href="/#/downloads">Downloads</a>
-        </li>
+         
+         <li>
+         <a href="/#/torrents">Torrents</a>
+         </li>
+         
+         <li>
+         <a href="/#/files">Files</a>
+         </li>
+         
+         <li>
+         <a href="/#/downloads">Downloads</a>
+         </li>
+         
+         <li>
+         <a href="/#/folders">Folders</a>
+         </li>
+         
        </ul>
      </div>
      <!-- /.navbar-collapse -->
    </div>
    <!-- /.container -->
   </nav>
-  <div class="" ng-view>
-  </div>
+  <div class="container" ng-view></div>
   <script src="lib/jquery/dist/jquery.js"></script>
   <script src="lib/jquery-ui/jquery-ui.js"></script>
   <script src="lib/lodash/dist/lodash.js"></script>
@@ -52,29 +59,28 @@
   <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <script src="lib/angular-ui-date/src/date.js"></script>
   <script src="lib/angular-snap/angular-snap.min.js"></script>
-
-  <script src="js/app.js"></script>
   <script src="js/truncate.js"></script>
   <script src="js/angular-file-upload-shim.js"></script>
   <script src="js/angular-file-upload.min.js"></script>
+
+  <script src="js/app.js"></script>
   <script src="js/home/home-controller.js"></script>
-
-  <script src="js/file_upload/file_upload-controller.js"></script>
-
-  <script src="js/tracker/tracker-controller.js"></script>
-  <script src="js/tracker/tracker-service.js"></script>
-
+  
   <script src="js/torrent/torrent-controller.js"></script>
   <script src="js/torrent/torrent-router.js"></script>
   <script src="js/torrent/torrent-service.js"></script>
-
+  
   <script src="js/file/file-controller.js"></script>
   <script src="js/file/file-router.js"></script>
   <script src="js/file/file-service.js"></script>
-
+  
   <script src="js/download/download-controller.js"></script>
   <script src="js/download/download-router.js"></script>
   <script src="js/download/download-service.js"></script>
-
+  
+  <script src="js/folder/folder-controller.js"></script>
+  <script src="js/folder/folder-router.js"></script>
+  <script src="js/folder/folder-service.js"></script>
+  
 </body>
 </html>

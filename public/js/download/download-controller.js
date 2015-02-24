@@ -153,11 +153,7 @@ angular.module('rubytorrent')
 
       function getDownloads() {
         Download.query().$promise.then(function(downloads) {
-          if ($scope.downloads === undefined) {
-            $scope.downloads = downloads;
-          } else {
-            downloads.forEach
-          }
+          $scope.downloads = downloads;
         });
       }
 
