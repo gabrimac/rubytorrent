@@ -1,15 +1,9 @@
 class File
 
-	def initialize
-
-	end
-
 	class << self
 
 		def all
-			files = []
-			Folder.all.each{ |folder| files.push(Dir.entries(folder.path)) }
-			files
+			Folder.all.collect{ |folder| Dir.entries(folder.path) }
 		end
 
 	end

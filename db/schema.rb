@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,12 +13,17 @@
 
 ActiveRecord::Schema.define(version: 20141012171821) do
 
-  create_table "downloads", force: true do |t|
+  create_table "downloads", force: :cascade do |t|
     t.string "name"
     t.string "path"
   end
 
-  create_table "torrents", force: true do |t|
+  create_table "folders", force: :cascade do |t|
+    t.string  "path"
+    t.integer "user_id"
+  end
+
+  create_table "torrents", force: :cascade do |t|
     t.string "name"
     t.string "path"
   end
